@@ -1,304 +1,466 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Web Proposal — Zafran Barber</title>
+  <title>Web Vanguard — Exclusive Proposal for Zafran Barber</title>
+  <meta name="description" content="Exclusive web design proposal from Web Vanguard for Zafran Barber — Premium Men's Grooming, DIFC" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
     :root {
       --bg: #0A0A0A;
-      --bg2: #111111;
-      --border: rgba(180,30,30,0.15);
+      --bg2: #0F0F0F;
+      --bg3: #161616;
       --accent: #B41E1E;
       --accent-light: #E03030;
+      --white: #FFFFFF;
       --text: #F0EDE8;
-      --muted: rgba(240,237,232,0.45);
-      --chrome: #C8C8C8;
+      --gray: #888880;
+      --border: rgba(180,30,30,0.15);
+      --border-strong: rgba(180,30,30,0.3);
     }
-    html { scroll-behavior: smooth; }
-    body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; line-height: 1.6; }
 
-    /* NAV */
-    nav { display: flex; align-items: center; justify-content: space-between; padding: 1.5rem 2rem; border-bottom: 1px solid var(--border); position: sticky; top: 0; background: rgba(10,10,10,0.95); backdrop-filter: blur(10px); z-index: 100; }
-    .nav-logo { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 900; letter-spacing: 0.05em; }
-    .nav-logo span { color: var(--accent); }
-    .nav-badge { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.2em; color: var(--muted); border: 1px solid var(--border); padding: 0.3rem 0.8rem; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.6;
+    }
+
+    [dir="rtl"] .hero-eyebrow::before { display: none; }
+    [dir="rtl"] .hero-eyebrow::after { content: ''; display: inline-block; width: 2rem; height: 1px; background: var(--accent); vertical-align: middle; margin-right: 0.75rem; }
+
+    /* STICKY NAV */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(10,10,10,0.97);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .logo { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; letter-spacing: 0.04em; color: var(--white); }
+    .logo span { color: var(--accent); }
+    .nav-center { font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.25em; color: var(--gray); }
+    .lang-toggle { display: flex; gap: 0.25rem; align-items: center; }
+    .lang-btn { background: none; border: 1px solid var(--border); color: var(--gray); font-size: 0.7rem; letter-spacing: 0.1em; padding: 0.3rem 0.6rem; cursor: pointer; font-family: 'Inter', sans-serif; transition: all 0.2s; }
+    .lang-btn.active, .lang-btn:hover { border-color: var(--accent); color: var(--accent); }
 
     /* HERO */
-    .hero { padding: 5rem 2rem 4rem; max-width: 900px; margin: 0 auto; }
-    .hero-label { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.3em; color: var(--accent); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 1rem; }
-    .hero-label::before { content: ''; display: block; width: 2.5rem; height: 1px; background: var(--accent); }
-    .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.8rem, 8vw, 5.5rem); font-weight: 900; line-height: 1.05; margin-bottom: 1.5rem; }
-    .hero h1 em { font-style: italic; color: var(--accent); }
-    .hero-sub { font-size: 0.95rem; color: var(--muted); max-width: 500px; line-height: 1.8; margin-bottom: 2.5rem; }
-    .hero-meta { display: flex; gap: 2rem; flex-wrap: wrap; }
-    .hero-meta-item { }
-    .hero-meta-item .label { font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.25em; color: var(--muted); margin-bottom: 0.25rem; }
-    .hero-meta-item .value { font-size: 0.9rem; font-weight: 600; }
-    .hero-meta-item .value.accent { color: var(--accent-light); font-family: 'Playfair Display', serif; font-size: 1.2rem; }
+    .hero { padding: 5rem 2rem 4.5rem; max-width: 860px; margin: 0 auto; }
 
-    /* DIVIDER */
-    .divider { border: none; border-top: 1px solid var(--border); margin: 0 2rem; }
+    .hero-eyebrow {
+      font-size: 0.62rem;
+      text-transform: uppercase;
+      letter-spacing: 0.3em;
+      color: var(--accent);
+      margin-bottom: 1.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .hero-eyebrow::before { content: ''; display: inline-block; width: 2rem; height: 1px; background: var(--accent); }
 
-    /* SECTIONS */
-    .sections { max-width: 900px; margin: 0 auto; padding: 3rem 2rem; display: flex; flex-direction: column; gap: 0; }
-    .section-item { display: grid; grid-template-columns: 3rem 1fr; gap: 1.5rem; padding: 2.5rem 0; border-bottom: 1px solid var(--border); }
-    .section-item:last-child { border-bottom: none; }
-    .section-num { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 900; color: var(--accent); opacity: 0.4; line-height: 1; padding-top: 0.2rem; }
-    .section-content h3 { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 700; margin-bottom: 0.25rem; }
-    .section-content .tagline { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.2em; color: var(--accent); margin-bottom: 0.75rem; }
-    .section-content p { font-size: 0.875rem; color: var(--muted); line-height: 1.75; }
+    .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(3rem, 8vw, 5.5rem); font-weight: 700; font-style: italic; line-height: 1.05; margin-bottom: 1.25rem; color: var(--white); }
+    .hero h1 em { font-style: normal; color: var(--accent); }
+
+    .hero-tagline { font-size: 1.05rem; color: var(--gray); max-width: 520px; line-height: 1.75; margin-bottom: 2.5rem; font-weight: 300; }
+    .hero-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 1.25rem; }
+
+    .badge-plan { display: inline-flex; align-items: center; gap: 0.5rem; border: 1px solid var(--border-strong); padding: 0.6rem 1.2rem; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.05em; }
+    .badge-plan .star { color: var(--accent); }
+
+    .btn-demo { display: inline-flex; align-items: center; gap: 0.5rem; color: var(--accent); font-size: 0.85rem; font-weight: 500; letter-spacing: 0.05em; text-decoration: none; border-bottom: 1px solid var(--border-strong); padding-bottom: 0.2rem; transition: color 0.2s, border-color 0.2s; }
+    .btn-demo:hover { color: var(--accent-light); border-color: var(--accent-light); }
+
+    .divider { border: none; border-top: 1px solid var(--border); }
+
+    /* PROBLEM */
+    .problem { background: var(--bg2); padding: 4rem 2rem; }
+    .problem-inner { max-width: 860px; margin: 0 auto; }
+    .problem-label { font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.3em; color: var(--accent); margin-bottom: 1.5rem; }
+    .problem h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.5rem, 4vw, 2.2rem); font-weight: 600; line-height: 1.35; color: var(--white); max-width: 680px; }
+    .problem p { margin-top: 1rem; color: var(--gray); font-size: 0.95rem; max-width: 600px; line-height: 1.8; }
+
+    /* BUILT */
+    .built { padding: 5rem 2rem; max-width: 860px; margin: 0 auto; }
+    .section-header { margin-bottom: 3rem; }
+    .section-label { font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.3em; color: var(--accent); margin-bottom: 0.75rem; }
+    .section-header h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.6rem, 4vw, 2.4rem); font-weight: 600; color: var(--white); }
+    .built-list { display: flex; flex-direction: column; }
+    .built-item { display: grid; grid-template-columns: 3.5rem 1fr; gap: 1.5rem; padding: 2.25rem 0; border-bottom: 1px solid var(--border); align-items: start; }
+    .built-item:last-child { border-bottom: none; }
+    .built-num { font-family: 'Playfair Display', serif; font-size: 2.2rem; font-weight: 700; color: var(--accent); opacity: 0.35; line-height: 1; padding-top: 0.25rem; }
+    .built-content h3 { font-family: 'Playfair Display', serif; font-size: 1.15rem; font-weight: 600; color: var(--white); margin-bottom: 0.6rem; }
+    .built-content p { font-size: 0.9rem; color: var(--gray); line-height: 1.75; }
 
     /* FEATURES */
-    .features { max-width: 900px; margin: 0 auto; padding: 3rem 2rem; }
-    .features h2 { font-family: 'Playfair Display', serif; font-size: 1.8rem; margin-bottom: 2rem; }
-    .features-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem; }
-    .feature-item { background: var(--bg2); border: 1px solid var(--border); padding: 1.25rem; }
-    .feature-icon { font-size: 1.4rem; margin-bottom: 0.5rem; }
-    .feature-title { font-size: 0.8rem; font-weight: 600; margin-bottom: 0.25rem; }
-    .feature-desc { font-size: 0.75rem; color: var(--muted); line-height: 1.5; }
+    .features { background: var(--bg2); padding: 5rem 2rem; }
+    .features-inner { max-width: 860px; margin: 0 auto; }
+    .features-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1.5rem; margin-top: 2.5rem; }
+    .feature-card { background: var(--bg3); border: 1px solid var(--border); padding: 1.5rem; display: flex; gap: 1rem; align-items: flex-start; }
+    .feature-icon { font-size: 1.3rem; flex-shrink: 0; margin-top: 0.1rem; }
+    .feature-text strong { display: block; font-size: 0.85rem; font-weight: 600; color: var(--white); margin-bottom: 0.25rem; }
+    .feature-text span { font-size: 0.8rem; color: var(--gray); }
 
     /* PRICING */
-    .pricing { max-width: 900px; margin: 0 auto; padding: 3rem 2rem; }
-    .pricing h2 { font-family: 'Playfair Display', serif; font-size: 1.8rem; margin-bottom: 0.5rem; }
-    .pricing-sub { font-size: 0.85rem; color: var(--muted); margin-bottom: 2rem; }
-    .pricing-table { width: 100%; border-collapse: collapse; }
-    .pricing-table th { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.2em; color: var(--muted); text-align: left; padding: 0.75rem 1rem; border-bottom: 1px solid var(--border); }
-    .pricing-table td { padding: 1rem; border-bottom: 1px solid var(--border); font-size: 0.85rem; vertical-align: top; }
-    .pricing-table tr.highlight td { background: rgba(180,30,30,0.06); }
-    .plan-name { font-weight: 700; }
-    .plan-price { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--accent-light); white-space: nowrap; }
-    .plan-badge { display: inline-block; font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.15em; background: var(--accent); color: white; padding: 0.2rem 0.5rem; margin-left: 0.5rem; vertical-align: middle; }
+    .pricing { padding: 5rem 2rem; max-width: 860px; margin: 0 auto; }
+    .pricing-table { width: 100%; border-collapse: collapse; margin-top: 2.5rem; font-size: 0.88rem; }
+    .pricing-table th { text-align: left; font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.2em; color: var(--gray); padding: 0 1rem 1rem 0; border-bottom: 1px solid var(--border); font-weight: 400; }
+    .pricing-table td { padding: 1.25rem 1rem 1.25rem 0; border-bottom: 1px solid var(--border); vertical-align: top; }
+    .pricing-table tr:last-child td { border-bottom: none; }
+    .plan-name { font-weight: 600; color: var(--white); font-size: 0.92rem; }
+    .plan-rec { display: inline-block; font-size: 0.55rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--bg); background: var(--accent); padding: 0.2rem 0.5rem; margin-left: 0.5rem; vertical-align: middle; }
+    .plan-price { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: var(--accent); white-space: nowrap; }
+    .plan-includes { color: var(--gray); font-size: 0.85rem; line-height: 1.7; }
+    .pricing-table tr.highlighted td { background: rgba(180,30,30,0.06); }
 
     /* CTA */
-    .cta { max-width: 900px; margin: 0 auto; padding: 3rem 2rem 5rem; text-align: center; }
-    .cta h2 { font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 1rem; }
-    .cta p { font-size: 0.9rem; color: var(--muted); margin-bottom: 2.5rem; max-width: 400px; margin-left: auto; margin-right: auto; }
+    .cta { background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 5rem 2rem; text-align: center; }
+    .cta-inner { max-width: 560px; margin: 0 auto; }
+    .cta h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.6rem, 4vw, 2.4rem); font-weight: 700; font-style: italic; color: var(--white); margin-bottom: 1rem; }
+    .cta p { color: var(--gray); font-size: 0.95rem; margin-bottom: 2.5rem; line-height: 1.75; }
     .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
-    .btn-primary { display: inline-flex; align-items: center; gap: 0.6rem; background: #25D366; color: white; padding: 0.9rem 2rem; font-size: 0.85rem; font-weight: 600; text-decoration: none; letter-spacing: 0.05em; transition: opacity 0.2s; }
-    .btn-primary:hover { opacity: 0.88; }
-    .btn-secondary { display: inline-flex; align-items: center; gap: 0.6rem; border: 1px solid var(--border); color: var(--text); padding: 0.9rem 2rem; font-size: 0.85rem; text-decoration: none; letter-spacing: 0.05em; transition: border-color 0.2s; }
-    .btn-secondary:hover { border-color: var(--accent); }
+    .btn-whatsapp { display: inline-flex; align-items: center; gap: 0.5rem; background: #25D366; color: #fff; font-size: 0.85rem; font-weight: 600; padding: 0.9rem 1.8rem; text-decoration: none; letter-spacing: 0.03em; transition: opacity 0.2s; }
+    .btn-whatsapp:hover { opacity: 0.88; }
+    .btn-view-demo { display: inline-flex; align-items: center; gap: 0.5rem; background: transparent; border: 1px solid var(--border-strong); color: var(--accent); font-size: 0.85rem; font-weight: 600; padding: 0.9rem 1.8rem; text-decoration: none; letter-spacing: 0.03em; transition: all 0.2s; }
+    .btn-view-demo:hover { background: rgba(180,30,30,0.08); }
 
-    /* LANGUAGE TOGGLE */
-    .nav-right { display: flex; align-items: center; gap: 1rem; }
-    .lang-toggle { display: flex; align-items: center; border: 1px solid var(--border); overflow: hidden; }
-    .lang-btn { background: transparent; border: none; color: var(--muted); font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.35rem 0.8rem; cursor: pointer; transition: all 0.25s; }
-    .lang-btn.active { background: var(--accent); color: white; }
-    .lang-btn:hover:not(.active) { color: var(--accent-light); }
-
-    /* RTL support */
-    html[dir="rtl"] body { direction: rtl; }
+    footer { padding: 2rem; text-align: center; font-size: 0.72rem; color: var(--gray); letter-spacing: 0.05em; border-top: 1px solid var(--border); }
+    footer a { color: var(--accent); text-decoration: none; }
 
     @media (max-width: 600px) {
-      .hero { padding: 3rem 1.5rem 2.5rem; }
-      .sections, .features, .pricing, .cta { padding-left: 1.5rem; padding-right: 1.5rem; }
-      .section-item { grid-template-columns: 2rem 1fr; gap: 1rem; }
-      .pricing-table td:last-child { display: none; }
+      header { padding: 0.85rem 1rem; }
+      .nav-center { display: none; }
+      .hero { padding: 3.5rem 1rem 3rem; }
+      .problem, .built, .features, .pricing, .cta { padding-left: 1rem; padding-right: 1rem; }
+      .built-item { grid-template-columns: 2.5rem 1fr; }
+      .pricing-table th:last-child, .pricing-table td:last-child { display: none; }
+      footer { padding: 1.5rem 1rem; }
     }
+
+    .ar { display: none; }
   </style>
 </head>
 <body>
 
-<nav>
-  <div class="nav-logo">Web<span>Vanguard</span></div>
-  <div class="nav-right">
-    <div class="nav-badge" data-en="Exclusive Proposal" data-ar="عرض حصري">Exclusive Proposal</div>
-    <div class="lang-toggle" role="group" aria-label="Language">
-      <button class="lang-btn active" onclick="setLang('en')" id="btn-en">EN</button>
-      <button class="lang-btn" onclick="setLang('ar')" id="btn-ar">AR</button>
-    </div>
+<!-- STICKY NAV -->
+<header>
+  <div class="logo">Web<span>Vanguard</span></div>
+  <div class="nav-center en">Exclusive Proposal</div>
+  <div class="nav-center ar">عرض حصري</div>
+  <div class="lang-toggle">
+    <button class="lang-btn active" onclick="setLang('en')">EN</button>
+    <button class="lang-btn" onclick="setLang('ar')">AR</button>
   </div>
-</nav>
+</header>
 
-<div class="hero">
-  <div class="hero-label" data-en="Premium Web Design · Dubai" data-ar="تصميم مواقع متميز · دبي">Premium Web Design · Dubai</div>
-  <h1>Zafran<br /><em>Barber</em></h1>
-  <p class="hero-sub" data-en="A bespoke website concept built exclusively for your grooming studio in DIFC. Ready to go live — you just need to put your name on it." data-ar="مفهوم موقع مخصص مبني حصرياً لاستوديو الحلاقة الخاص بك في DIFC. جاهز للإطلاق — كل ما تحتاجه هو وضع اسمك عليه.">A bespoke website concept built exclusively for your grooming studio in DIFC. Ready to go live — you just need to put your name on it.</p>
-  <div class="hero-meta">
-    <div class="hero-meta-item">
-      <div class="label" data-en="Date" data-ar="التاريخ">Date</div>
-      <div class="value" data-en="March 2026" data-ar="مارس 2026">March 2026</div>
-    </div>
-    <div class="hero-meta-item">
-      <div class="label" data-en="Recommended Plan" data-ar="الخطة الموصى بها">Recommended Plan</div>
-      <div class="value accent">Growth — AED 4,500</div>
-    </div>
-    <div class="hero-meta-item">
-      <div class="label" data-en="Live Demo" data-ar="الديمو المباشر">Live Demo</div>
-      <div class="value"><a href="https://zafran-barber.vercel.app" target="_blank" style="color:var(--accent-light);text-decoration:none;" data-en="View Site →" data-ar="مشاهدة الموقع ←">View Site →</a></div>
-    </div>
-  </div>
-</div>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-eyebrow en">Web Design Proposal · DIFC, Dubai · March 2026</div>
+  <div class="hero-eyebrow ar">عرض تصميم مواقع · مركز دبي المالي العالمي · مارس ٢٠٢٦</div>
 
-<hr class="divider" />
+  <h1>
+    <span class="en">Zafran <em>Barber</em></span>
+    <span class="ar">زعفران <em>باربر</em></span>
+  </h1>
 
-<div class="sections">
-  <div class="section-item">
-    <div class="section-num">01</div>
-    <div class="section-content">
-      <div class="tagline">First Impression</div>
-      <h3>Hero — Power & Precision</h3>
-      <p>A full-screen dark hero with your brand name in bold, a powerful tagline, and a direct "Book Now" call-to-action. Designed to convert in the first 3 seconds.</p>
+  <p class="hero-tagline en">A bold, professional website that positions Zafran Barber as Dubai's premium men's grooming choice — and fills your chair with discerning clients who book online.</p>
+  <p class="hero-tagline ar">موقع جريء واحترافي يضع Zafran Barber كخيار العناية بالرجال الفاخر الأول في دبي — ويملأ كرسيك بعملاء مميزين يحجزون عبر الإنترنت.</p>
+
+  <div class="hero-actions">
+    <div class="badge-plan">
+      <span class="star">★</span>
+      <span class="en">Growth Plan — AED 4,500</span>
+      <span class="ar">خطة النمو — ٤٥٠٠ درهم</span>
     </div>
+    <a class="btn-demo" href="https://zafran-barber.vercel.app" target="_blank" rel="noopener">
+      <span class="en">View Live Demo →</span>
+      <span class="ar">مشاهدة العرض الحي ←</span>
+    </a>
   </div>
-  <div class="section-item">
-    <div class="section-num">02</div>
-    <div class="section-content">
-      <div class="tagline">Revenue Driver</div>
-      <h3>Services & Pricing</h3>
-      <p>Clean service cards with descriptions and prices in AED — Classic Cut, Beard Ritual, Hot Towel Shave, Kids Cut. Every service has a direct booking button.</p>
-    </div>
-  </div>
-  <div class="section-item">
-    <div class="section-num">03</div>
-    <div class="section-content">
-      <div class="tagline">Trust Builder</div>
-      <h3>The Story</h3>
-      <p>A compelling About section that humanizes your brand — who you are, your craft philosophy, years of experience. Clients book people they trust.</p>
-    </div>
-  </div>
-  <div class="section-item">
-    <div class="section-num">04</div>
-    <div class="section-content">
-      <div class="tagline">Social Proof</div>
-      <h3>Gallery & Reviews</h3>
-      <p>Before/after showcase and a testimonials section with Google Reviews-style cards. Real proof that converts browsers into bookers.</p>
-    </div>
-  </div>
-  <div class="section-item">
-    <div class="section-num">05</div>
-    <div class="section-content">
-      <div class="tagline">Conversion</div>
-      <h3>Contact & Booking</h3>
-      <p>Functional contact form, Google Maps embed showing your DIFC location, and a permanent WhatsApp button so clients can reach you in one tap.</p>
-    </div>
-  </div>
-</div>
+</section>
 
 <hr class="divider" />
 
-<div class="features">
-  <h2>Everything included</h2>
-  <div class="features-grid">
-    <div class="feature-item">
-      <div class="feature-icon">📱</div>
-      <div class="feature-title">Mobile-First</div>
-      <div class="feature-desc">Perfect on any device. 80% of your clients will visit from mobile.</div>
+<!-- THE PROBLEM -->
+<section class="problem">
+  <div class="problem-inner">
+    <div class="problem-label en">The Reality</div>
+    <div class="problem-label ar">الواقع</div>
+    <h2 class="en">In Dubai's competitive grooming market, men choose their barber based on what they see online. No website means no new clients.</h2>
+    <h2 class="ar">في سوق العناية بالرجال التنافسي في دبي، يختار الرجال حلاقهم بناءً على ما يرونه عبر الإنترنت. بدون موقع إلكتروني تعني بدون عملاء جدد.</h2>
+    <p class="en">When a man looks for a premium barber in DIFC, he's researching online first. Your website is his first impression — and it decides whether he books with you or a competitor.</p>
+    <p class="ar">عندما يبحث رجل عن حلاق فاخر في مركز دبي المالي، فهو يبحث عبر الإنترنت أولاً. موقعك هو انطباعه الأول — ويقرر ما إذا كان سيحجز معك أم مع منافس.</p>
+  </div>
+</section>
+
+<!-- WHAT WE BUILT -->
+<section class="built">
+  <div class="section-header">
+    <div class="section-label en">What We Built For You</div>
+    <div class="section-label ar">ما بنيناه لك</div>
+    <h2 class="en">Five sections. Designed to fill your schedule.</h2>
+    <h2 class="ar">خمسة أقسام. مصممة لملء جدولك الزمني.</h2>
+  </div>
+
+  <div class="built-list">
+    <div class="built-item">
+      <div class="built-num">01</div>
+      <div class="built-content">
+        <h3 class="en">The Statement</h3>
+        <h3 class="ar">البيان</h3>
+        <p class="en">A bold opening that communicates confidence and premium quality. The moment a man lands on your site, he knows Zafran Barber isn't just any barber — it's a choice for discerning clients who want excellence.</p>
+        <p class="ar">افتتاح جريء يوصل الثقة والجودة الفاخرة. في اللحظة التي يصل فيها الرجل إلى موقعك، يعرف أن Zafran Barber ليس حلاقاً عادياً — إنه خيار للعملاء المميزين الذين يريدون التميز.</p>
+      </div>
     </div>
-    <div class="feature-item">
-      <div class="feature-icon">🔍</div>
-      <div class="feature-title">SEO Optimized</div>
-      <div class="feature-desc">Show up on Google when someone searches "barber DIFC Dubai".</div>
+
+    <div class="built-item">
+      <div class="built-num">02</div>
+      <div class="built-content">
+        <h3 class="en">The Services</h3>
+        <h3 class="ar">الخدمات</h3>
+        <p class="en">Every cut and treatment with clear descriptions and pricing in AED. Men know exactly what they're booking for — no surprises, no guesswork. That clarity drives bookings.</p>
+        <p class="ar">كل قص وعلاج مع وصف واضح وأسعار بالدرهم. يعرف الرجال بالضبط ما يحجزونه — بلا مفاجآت، بلا تخمين. هذا الوضوح يحفّز الحجوزات.</p>
+      </div>
     </div>
-    <div class="feature-item">
-      <div class="feature-icon">💬</div>
-      <div class="feature-title">WhatsApp Button</div>
-      <div class="feature-desc">Floating button — clients book directly without calling.</div>
+
+    <div class="built-item">
+      <div class="built-num">03</div>
+      <div class="built-content">
+        <h3 class="en">The Craft</h3>
+        <h3 class="ar">الحرفة</h3>
+        <p class="en">Your barber's story, training, and philosophy. In a service business, the person matters as much as the cut. Let clients see why your barber is worth their time and trust.</p>
+        <p class="ar">قصة حلاقك وتدريبه وفلسفته. في عمل الخدمات، الشخص مهم كما هو القص. اترك العملاء يرون لماذا حلاقك يستحق وقتهم وثقتهم.</p>
+      </div>
     </div>
-    <div class="feature-item">
-      <div class="feature-icon">📧</div>
-      <div class="feature-title">Contact Form</div>
-      <div class="feature-desc">Leads go directly to your email. Never miss an enquiry.</div>
+
+    <div class="built-item">
+      <div class="built-num">04</div>
+      <div class="built-content">
+        <h3 class="en">The Work</h3>
+        <h3 class="ar">الأعمال</h3>
+        <p class="en">A gallery of cuts and styles. Men are visual creatures — when they see sharp, clean work on real clients, they want to be next. This gallery is your portfolio and your proof.</p>
+        <p class="ar">معرض للقصات والأنماط. الرجال كائنات بصرية — عندما يرون عملاً حاداً ونظيفاً على عملاء حقيقيين، يريدون أن يكونوا الأطباء التاليين. هذا المعرض هو محفظتك وإثباتك.</p>
+      </div>
     </div>
-    <div class="feature-item">
-      <div class="feature-icon">📊</div>
-      <div class="feature-title">Analytics</div>
-      <div class="feature-desc">See exactly how many people visit your site and where they come from.</div>
-    </div>
-    <div class="feature-item">
-      <div class="feature-icon">🤖</div>
-      <div class="feature-title">AI SEO</div>
-      <div class="feature-desc">Optimized for ChatGPT and Perplexity — the new way people search.</div>
-    </div>
-    <div class="feature-item">
-      <div class="feature-icon">⚡</div>
-      <div class="feature-title">Fast Loading</div>
-      <div class="feature-desc">Under 2 seconds on mobile. Google rewards fast sites with better rankings.</div>
-    </div>
-    <div class="feature-item">
-      <div class="feature-icon">🗺️</div>
-      <div class="feature-title">Google Maps</div>
-      <div class="feature-desc">Embedded map so clients find you instantly in DIFC.</div>
+
+    <div class="built-item">
+      <div class="built-num">05</div>
+      <div class="built-content">
+        <h3 class="en">Book Your Chair</h3>
+        <h3 class="ar">احجز كرسيك</h3>
+        <p class="en">An appointment booking form, WhatsApp button for quick enquiries, and your exact DIFC location. Three ways for a man to book — the easier you make it, the faster your schedule fills.</p>
+        <p class="ar">نموذج حجز موعد، وزر واتساب للاستفسارات السريعة، وموقعك الدقيق في مركز دبي المالي. ثلاث طرق لحجز موعد — كلما سهّلت الأمر، امتلأ جدولك بسرعة.</p>
+      </div>
     </div>
   </div>
-</div>
+</section>
 
 <hr class="divider" />
 
-<div class="pricing">
-  <h2>Investment breakdown</h2>
-  <p class="pricing-sub">One-time payment. No monthly fees. Hosted free on Vercel.</p>
+<!-- FEATURES -->
+<section class="features">
+  <div class="features-inner">
+    <div class="section-label en">What's Included</div>
+    <div class="section-label ar">ما هو مدرج</div>
+    <h2 style="font-family:'Playfair Display',serif; font-size:clamp(1.6rem,4vw,2.2rem); font-weight:600; color:var(--white); margin-top:0.5rem;" class="en">Everything you need. Nothing you don't.</h2>
+    <h2 style="font-family:'Playfair Display',serif; font-size:clamp(1.6rem,4vw,2.2rem); font-weight:600; color:var(--white); margin-top:0.5rem;" class="ar">كل ما تحتاجه. لا شيء أقل.</h2>
+
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">📱</div>
+        <div class="feature-text">
+          <strong class="en">Works on any device</strong>
+          <strong class="ar">يعمل على أي جهاز</strong>
+          <span class="en">Phone, tablet, or desktop — your site looks perfect everywhere</span>
+          <span class="ar">هاتف أو جهاز لوحي أو سطح مكتب — موقعك يبدو مثالياً في كل مكان</span>
+        </div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🔍</div>
+        <div class="feature-text">
+          <strong class="en">Found on Google</strong>
+          <strong class="ar">موجود على جوجل</strong>
+          <span class="en">When men search for premium barbers in DIFC, you appear first</span>
+          <span class="ar">عندما يبحث الرجال عن حلاقين فاخرين في مركز دبي المالي، تظهر أنت أولاً</span>
+        </div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">💬</div>
+        <div class="feature-text">
+          <strong class="en">WhatsApp button</strong>
+          <strong class="ar">زر واتساب</strong>
+          <span class="en">Clients book or enquire in one tap — no friction</span>
+          <span class="ar">يحجز العملاء أو يستفسرون بنقرة واحدة — بلا احتكاك</span>
+        </div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📧</div>
+        <div class="feature-text">
+          <strong class="en">Booking form</strong>
+          <strong class="ar">نموذج الحجز</strong>
+          <span class="en">Appointment requests come straight to your inbox or phone</span>
+          <span class="ar">طلبات المواعيد تصل مباشرة إلى بريدك الوارد أو هاتفك</span>
+        </div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📊</div>
+        <div class="feature-text">
+          <strong class="en">Visitor tracking</strong>
+          <strong class="ar">تتبع الزوار</strong>
+          <span class="en">See how many men are visiting your site each week</span>
+          <span class="ar">تعرف على عدد الرجال الذين يزورون موقعك كل أسبوع</span>
+        </div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🤖</div>
+        <div class="feature-text">
+          <strong class="en">AI search ready</strong>
+          <strong class="ar">جاهز للبحث بالذكاء الاصطناعي</strong>
+          <span class="en">Appears when people ask ChatGPT or Google AI for barber recommendations</span>
+          <span class="ar">يظهر عندما يسأل الناس ChatGPT أو Google AI عن توصيات حلاقين</span>
+        </div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">⚡</div>
+        <div class="feature-text">
+          <strong class="en">Loads in under 2 seconds</strong>
+          <strong class="ar">يتحمل في أقل من ثانيتين</strong>
+          <span class="en">Fast on any connection — clients never wait</span>
+          <span class="ar">سريع على أي اتصال — العملاء لا ينتظرون أبداً</span>
+        </div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🗺️</div>
+        <div class="feature-text">
+          <strong class="en">Google Maps integration</strong>
+          <strong class="ar">تكامل خرائط جوجل</strong>
+          <span class="en">Clients find your DIFC location and navigate straight to you</span>
+          <span class="ar">يجد العملاء موقعك في مركز دبي المالي ويتنقلون مباشرة إليك</span>
+        </div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🌐</div>
+        <div class="feature-text">
+          <strong class="en">Arabic & multilingual ready</strong>
+          <strong class="ar">جاهز للعربية ومتعدد اللغات</strong>
+          <span class="en">Serve clients in Arabic, English, or any language</span>
+          <span class="ar">اخدم العملاء بالعربية أو الإنجليزية أو أي لغة</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing">
+  <div class="section-header">
+    <div class="section-label en">Your Investment</div>
+    <div class="section-label ar">استثمارك</div>
+    <h2 class="en">Choose the plan that fits your goals.</h2>
+    <h2 class="ar">اختر الخطة التي تناسب أهدافك.</h2>
+  </div>
+
   <table class="pricing-table">
     <thead>
       <tr>
-        <th>Plan</th>
-        <th>Price</th>
-        <th>What's included</th>
+        <th class="en">Plan</th><th class="ar">الخطة</th>
+        <th class="en">Investment</th><th class="ar">الاستثمار</th>
+        <th class="en">What's included</th><th class="ar">ما هو مدرج</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td><span class="plan-name">Starter</span></td>
+        <td><span class="plan-name en">Starter</span><span class="plan-name ar">البداية</span></td>
         <td><span class="plan-price">AED 1,500</span></td>
-        <td style="color:var(--muted)">1-page landing, WhatsApp, SEO basic, mobile</td>
+        <td><span class="plan-includes en">Single-page website, WhatsApp button, found on Google, works on any device</span><span class="plan-includes ar">موقع من صفحة واحدة، زر واتساب، موجود على جوجل، يعمل على أي جهاز</span></td>
       </tr>
       <tr>
-        <td><span class="plan-name">Launch</span></td>
+        <td><span class="plan-name en">Launch</span><span class="plan-name ar">الإطلاق</span></td>
         <td><span class="plan-price">AED 2,500</span></td>
-        <td style="color:var(--muted)">Multi-page, contact form, WhatsApp, full SEO, GA4</td>
+        <td><span class="plan-includes en">Full multi-page website, booking form, WhatsApp, found on Google, visitor tracking</span><span class="plan-includes ar">موقع كامل متعدد الصفحات، نموذج حجز، واتساب، موجود على جوجل، تتبع الزوار</span></td>
       </tr>
-      <tr class="highlight">
-        <td><span class="plan-name">Growth <span class="plan-badge">Recommended</span></span></td>
+      <tr class="highlighted">
+        <td>
+          <span class="plan-name en">Growth</span><span class="plan-name ar">النمو</span>
+          <span class="plan-rec en">Recommended</span><span class="plan-rec ar">موصى به</span>
+        </td>
         <td><span class="plan-price">AED 4,500</span></td>
-        <td style="color:var(--muted)">Launch + 3 months support, Analytics setup, AI SEO</td>
+        <td><span class="plan-includes en">Everything in Launch, plus 3 months of updates and support, and optimized to appear on AI search tools like ChatGPT</span><span class="plan-includes ar">كل شيء في الإطلاق، بالإضافة إلى 3 أشهر من التحديثات والدعم، ومحسّن للظهور على أدوات البحث بالذكاء الاصطناعي</span></td>
       </tr>
       <tr>
-        <td><span class="plan-name">Premium</span></td>
+        <td><span class="plan-name en">Premium</span><span class="plan-name ar">البريميوم</span></td>
         <td><span class="plan-price">AED 8,000+</span></td>
-        <td style="color:var(--muted)">Growth + Google Ads setup, content strategy, monthly reporting</td>
+        <td><span class="plan-includes en">Everything in Growth, plus Google advertising setup, content strategy, and monthly performance reports</span><span class="plan-includes ar">كل شيء في النمو، بالإضافة إلى إعداد إعلانات جوجل واستراتيجية المحتوى وتقارير الأداء الشهرية</span></td>
       </tr>
     </tbody>
   </table>
-</div>
+</section>
 
 <hr class="divider" />
 
-<div class="cta">
-  <h2>Ready to grow?</h2>
-  <p>Your website is already built. Let's put your name on it and start getting more clients.</p>
-  <div class="cta-buttons">
-    <a href="https://wa.me/971500000000?text=Hi%2C%20I%20saw%20the%20Zafran%20Barber%20proposal%20from%20Web%20Vanguard%20and%20I%27m%20interested" class="btn-primary" target="_blank">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-      WhatsApp Us
-    </a>
-    <a href="https://zafran-barber.vercel.app" class="btn-secondary" target="_blank">
-      View Live Demo →
-    </a>
+<!-- CTA -->
+<section class="cta">
+  <div class="cta-inner">
+    <h2 class="en">Ready to fill your chair?</h2>
+    <h2 class="ar">هل أنت مستعد لملء كرسيك؟</h2>
+    <p class="en">Your website is built and ready. Let's get it live — and start bringing qualified clients through your door every day.</p>
+    <p class="ar">موقعك مبني وجاهز. لنجعله مباشراً — ونبدأ في جلب عملاء مؤهلين إلى باب عملك كل يوم.</p>
+    <div class="cta-buttons">
+      <a class="btn-whatsapp" href="https://wa.me/971500000000?text=Hi%2C%20I%27m%20interested%20in%20the%20Web%20Vanguard%20proposal%20for%20Zafran%20Barber" target="_blank" rel="noopener">
+        💬 <span class="en">Message Us on WhatsApp</span><span class="ar">راسلنا على واتساب</span>
+      </a>
+      <a class="btn-view-demo" href="https://zafran-barber.vercel.app" target="_blank" rel="noopener">
+        <span class="en">View Live Demo →</span><span class="ar">مشاهدة العرض الحي ←</span>
+      </a>
+    </div>
   </div>
-</div>
+</section>
 
-  <script>
-    function setLang(lang) {
-      const html = document.documentElement;
-      html.lang = lang;
-      html.dir = lang === 'ar' ? 'rtl' : 'ltr';
-      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
-      document.getElementById('btn-ar').classList.toggle('active', lang === 'ar');
-      document.querySelectorAll('[data-en][data-ar]').forEach(el => {
-        const text = el.getAttribute('data-' + lang);
-        if (text) el.innerHTML = text;
+<footer>
+  <p>© 2026 <a href="https://webvanguard.ae">Web Vanguard</a> · <span class="en">Exclusive proposal for Zafran Barber · DIFC</span><span class="ar">عرض حصري لـ Zafran Barber · مركز دبي المالي العالمي</span></p>
+</footer>
+
+<script>
+  function setLang(lang) {
+    const html = document.documentElement;
+    const enEls = document.querySelectorAll('.en');
+    const arEls = document.querySelectorAll('.ar');
+    const langBtns = document.querySelectorAll('.lang-btn');
+
+    if (lang === 'ar') {
+      html.setAttribute('lang', 'ar');
+      html.setAttribute('dir', 'rtl');
+      enEls.forEach(el => el.style.display = 'none');
+      arEls.forEach(el => {
+        el.style.display = el.tagName === 'SPAN' ? 'inline' : 'block';
       });
-      localStorage.setItem('wv-lang', lang);
+      langBtns.forEach(b => b.classList.toggle('active', b.textContent === 'AR'));
+    } else {
+      html.setAttribute('lang', 'en');
+      html.setAttribute('dir', 'ltr');
+      enEls.forEach(el => {
+        el.style.display = el.tagName === 'SPAN' ? 'inline' : 'block';
+      });
+      arEls.forEach(el => el.style.display = 'none');
+      langBtns.forEach(b => b.classList.toggle('active', b.textContent === 'EN'));
     }
-    (function() {
-      const saved = localStorage.getItem('wv-lang');
-      if (saved === 'ar') setLang('ar');
-    })();
-  </script>
+  }
+</script>
 
 </body>
 </html>
