@@ -83,6 +83,16 @@
     .btn-secondary { display: inline-flex; align-items: center; gap: 0.6rem; border: 1px solid var(--border); color: var(--text); padding: 0.9rem 2rem; font-size: 0.85rem; text-decoration: none; letter-spacing: 0.05em; transition: border-color 0.2s; }
     .btn-secondary:hover { border-color: var(--accent); }
 
+    /* LANGUAGE TOGGLE */
+    .nav-right { display: flex; align-items: center; gap: 1rem; }
+    .lang-toggle { display: flex; align-items: center; border: 1px solid var(--border); overflow: hidden; }
+    .lang-btn { background: transparent; border: none; color: var(--muted); font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.35rem 0.8rem; cursor: pointer; transition: all 0.25s; }
+    .lang-btn.active { background: var(--accent); color: white; }
+    .lang-btn:hover:not(.active) { color: var(--accent-light); }
+
+    /* RTL support */
+    html[dir="rtl"] body { direction: rtl; }
+
     @media (max-width: 600px) {
       .hero { padding: 3rem 1.5rem 2.5rem; }
       .sections, .features, .pricing, .cta { padding-left: 1.5rem; padding-right: 1.5rem; }
@@ -95,25 +105,31 @@
 
 <nav>
   <div class="nav-logo">Web<span>Vanguard</span></div>
-  <div class="nav-badge">Exclusive Proposal</div>
+  <div class="nav-right">
+    <div class="nav-badge" data-en="Exclusive Proposal" data-ar="عرض حصري">Exclusive Proposal</div>
+    <div class="lang-toggle" role="group" aria-label="Language">
+      <button class="lang-btn active" onclick="setLang('en')" id="btn-en">EN</button>
+      <button class="lang-btn" onclick="setLang('ar')" id="btn-ar">AR</button>
+    </div>
+  </div>
 </nav>
 
 <div class="hero">
-  <div class="hero-label">Premium Web Design · Dubai</div>
+  <div class="hero-label" data-en="Premium Web Design · Dubai" data-ar="تصميم مواقع متميز · دبي">Premium Web Design · Dubai</div>
   <h1>Zafran<br /><em>Barber</em></h1>
-  <p class="hero-sub">A bespoke website concept built exclusively for your grooming studio in DIFC. Ready to go live — you just need to put your name on it.</p>
+  <p class="hero-sub" data-en="A bespoke website concept built exclusively for your grooming studio in DIFC. Ready to go live — you just need to put your name on it." data-ar="مفهوم موقع مخصص مبني حصرياً لاستوديو الحلاقة الخاص بك في DIFC. جاهز للإطلاق — كل ما تحتاجه هو وضع اسمك عليه.">A bespoke website concept built exclusively for your grooming studio in DIFC. Ready to go live — you just need to put your name on it.</p>
   <div class="hero-meta">
     <div class="hero-meta-item">
-      <div class="label">Date</div>
-      <div class="value">March 2026</div>
+      <div class="label" data-en="Date" data-ar="التاريخ">Date</div>
+      <div class="value" data-en="March 2026" data-ar="مارس 2026">March 2026</div>
     </div>
     <div class="hero-meta-item">
-      <div class="label">Recommended Plan</div>
+      <div class="label" data-en="Recommended Plan" data-ar="الخطة الموصى بها">Recommended Plan</div>
       <div class="value accent">Growth — AED 4,500</div>
     </div>
     <div class="hero-meta-item">
-      <div class="label">Live Demo</div>
-      <div class="value"><a href="https://zafran-barber.vercel.app" target="_blank" style="color:var(--accent-light);text-decoration:none;">View Site →</a></div>
+      <div class="label" data-en="Live Demo" data-ar="الديمو المباشر">Live Demo</div>
+      <div class="value"><a href="https://zafran-barber.vercel.app" target="_blank" style="color:var(--accent-light);text-decoration:none;" data-en="View Site →" data-ar="مشاهدة الموقع ←">View Site →</a></div>
     </div>
   </div>
 </div>
@@ -264,6 +280,25 @@
     </a>
   </div>
 </div>
+
+  <script>
+    function setLang(lang) {
+      const html = document.documentElement;
+      html.lang = lang;
+      html.dir = lang === 'ar' ? 'rtl' : 'ltr';
+      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+      document.getElementById('btn-ar').classList.toggle('active', lang === 'ar');
+      document.querySelectorAll('[data-en][data-ar]').forEach(el => {
+        const text = el.getAttribute('data-' + lang);
+        if (text) el.innerHTML = text;
+      });
+      localStorage.setItem('wv-lang', lang);
+    }
+    (function() {
+      const saved = localStorage.getItem('wv-lang');
+      if (saved === 'ar') setLang('ar');
+    })();
+  </script>
 
 </body>
 </html>
