@@ -6,181 +6,92 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{--bg:#0A0A0A;--bg2:#111111;--acc:#B41E1E;--acc2:#E05555;--text:#F5F0E8;--muted:rgba(245,240,232,.5);--border:rgba(180,30,30,.15)}
-html{scroll-behavior:smooth}
-body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;line-height:1.6}
-a{color:inherit;text-decoration:none}
-
+:root{--bg:#0A0A0A;--bg2:#111111;--acc:#B41E1E;--acc2:#E03030;--text:#F5F0E8;--muted:rgba(245,240,232,.5);--border:rgba(180,30,30,.2)}
+html{scroll-behavior:smooth}body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;line-height:1.6}a{color:inherit;text-decoration:none}
 nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.2rem 2rem;background:rgba(10,10,10,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
 .logo{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:900;letter-spacing:.04em}.logo span{color:var(--acc)}
-.lang-toggle{display:flex;gap:.5rem}
-.lang-btn{font-size:.65rem;text-transform:uppercase;letter-spacing:.2em;padding:.3rem .7rem;border:1px solid var(--border);background:transparent;color:var(--muted);cursor:pointer;font-family:'Inter',sans-serif;transition:all .2s}
-.lang-btn.active{border-color:var(--acc);color:var(--acc)}
-
+.lang-toggle{display:flex;gap:.5rem}.lang-btn{font-size:.65rem;text-transform:uppercase;letter-spacing:.2em;padding:.3rem .7rem;border:1px solid var(--border);background:transparent;color:var(--muted);cursor:pointer;font-family:'Inter',sans-serif;transition:all .2s}.lang-btn.active{border-color:var(--acc);color:var(--acc)}
 .hero{max-width:900px;margin:0 auto;padding:5rem 2rem 4rem}
-.hero-label{font-size:.65rem;text-transform:uppercase;letter-spacing:.3em;color:var(--acc);display:flex;align-items:center;gap:1rem;margin-bottom:2rem}
-.hero-label::before{content:'';width:2rem;height:1px;background:var(--acc)}
+.hero-label{font-size:.65rem;text-transform:uppercase;letter-spacing:.3em;color:var(--acc);display:flex;align-items:center;gap:1rem;margin-bottom:2rem}.hero-label::before{content:'';width:2rem;height:1px;background:var(--acc)}
 .hero h1{font-family:'Playfair Display',serif;font-size:clamp(3rem,9vw,6rem);font-weight:900;font-style:italic;line-height:1.02;margin-bottom:1.25rem}
 .hero-tagline{font-size:1rem;color:var(--muted);max-width:480px;margin-bottom:2.5rem;line-height:1.75}
-.hero-pills{display:flex;flex-wrap:wrap;gap:.75rem;margin-bottom:2rem}
-.pill{font-size:.7rem;text-transform:uppercase;letter-spacing:.18em;padding:.45rem 1.1rem;border:1px solid var(--acc);color:var(--acc)}
-.pill.filled{background:var(--acc);color:var(--bg)}
-.demo-link{font-size:.8rem;letter-spacing:.1em;color:var(--acc);display:inline-flex;align-items:center;gap:.4rem;transition:opacity .2s}
-.demo-link:hover{opacity:.75}
-
-.opportunity{background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:3rem 2rem;text-align:center}
-.opportunity-inner{max-width:700px;margin:0 auto}
-.opp-title{font-family:'Playfair Display',serif;font-size:clamp(1.4rem,4vw,2rem);font-weight:700;margin-bottom:1rem}
-.opp-text{color:var(--muted);font-size:.9rem;line-height:1.8;margin-bottom:1.25rem}
-.opp-bold{font-size:1rem;font-weight:600;color:var(--text)}
-
-.sections{max-width:900px;margin:0 auto;padding:3rem 2rem}
-.sections h2{font-family:'Playfair Display',serif;font-size:1.5rem;margin-bottom:2.5rem}
-.section-item{display:grid;grid-template-columns:3.5rem 1fr;gap:1.5rem;padding:2rem 0;border-bottom:1px solid var(--border)}
-.section-item:last-child{border-bottom:none}
-.sec-num{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;color:var(--acc);opacity:.3;line-height:1;padding-top:.2rem}
-.sec-title{font-size:1.05rem;font-weight:600;margin-bottom:.4rem}
-.sec-desc{font-size:.85rem;color:var(--muted);line-height:1.75}
-
-.features{background:var(--bg2);padding:3rem 2rem;border-top:1px solid var(--border)}
-.features-inner{max-width:900px;margin:0 auto}
-.features h2{font-family:'Playfair Display',serif;font-size:1.5rem;margin-bottom:2rem}
-.features-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.75rem}
-.feat{padding:1.25rem;border:1px solid var(--border);background:var(--bg)}
-.feat-icon{font-size:1.3rem;margin-bottom:.5rem}
-.feat-title{font-size:.8rem;font-weight:600;margin-bottom:.2rem}
-.feat-desc{font-size:.75rem;color:var(--muted);line-height:1.5}
-
-.pricing{max-width:900px;margin:0 auto;padding:3rem 2rem}
-.pricing h2{font-family:'Playfair Display',serif;font-size:1.5rem;margin-bottom:.4rem}
-.pricing-sub{font-size:.85rem;color:var(--muted);margin-bottom:2rem}
-table{width:100%;border-collapse:collapse}
-th{font-size:.6rem;text-transform:uppercase;letter-spacing:.2em;color:var(--muted);text-align:left;padding:.75rem 1rem;border-bottom:1px solid var(--border)}
-td{padding:.9rem 1rem;border-bottom:1px solid var(--border);font-size:.85rem;vertical-align:top}
-tr.rec td{background:rgba(180,30,30,.06)}
-.plan-name{font-weight:700}
-.plan-price{font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--acc2);white-space:nowrap}
-.badge{display:inline-block;font-size:.55rem;text-transform:uppercase;letter-spacing:.12em;background:var(--acc);color:var(--bg);padding:.18rem .5rem;margin-left:.4rem;vertical-align:middle}
-.plan-desc{color:var(--muted)}
-
-.cta{padding:4rem 2rem 5rem;text-align:center}
-.cta-inner{max-width:600px;margin:0 auto}
-.cta h2{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,5vw,2.4rem);font-weight:900;margin-bottom:.75rem}
-.cta p{font-size:.9rem;color:var(--muted);margin-bottom:2.5rem;line-height:1.75}
-.cta-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
-.btn-wa{display:inline-flex;align-items:center;gap:.6rem;background:#25D366;color:#fff;padding:.85rem 1.75rem;font-size:.8rem;font-weight:600;letter-spacing:.05em;transition:opacity .2s}
-.btn-wa:hover{opacity:.88}
-.btn-demo{display:inline-flex;align-items:center;gap:.6rem;border:1px solid var(--border);color:var(--text);padding:.85rem 1.75rem;font-size:.8rem;letter-spacing:.05em;transition:border-color .2s}
-.btn-demo:hover{border-color:var(--acc)}
-
+.hero-pills{display:flex;flex-wrap:wrap;gap:.75rem;margin-bottom:2rem}.pill{font-size:.7rem;text-transform:uppercase;letter-spacing:.18em;padding:.45rem 1.1rem;border:1px solid var(--acc);color:var(--acc)}.pill.filled{background:var(--acc);color:#fff}
+.demo-link{font-size:.8rem;letter-spacing:.1em;color:var(--acc);display:inline-flex;align-items:center;gap:.4rem;transition:opacity .2s}.demo-link:hover{opacity:.75}
+.opportunity{background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:3rem 2rem;text-align:center}.opportunity-inner{max-width:700px;margin:0 auto}
+.opp-title{font-family:'Playfair Display',serif;font-size:clamp(1.4rem,4vw,2rem);font-weight:700;margin-bottom:1rem}.opp-text{color:var(--muted);font-size:.9rem;line-height:1.8;margin-bottom:1.25rem}.opp-bold{font-size:1rem;font-weight:600;color:var(--text)}
+.sections{max-width:900px;margin:0 auto;padding:3rem 2rem}.sections h2{font-family:'Playfair Display',serif;font-size:1.5rem;margin-bottom:2.5rem}
+.section-item{display:grid;grid-template-columns:3.5rem 1fr;gap:1.5rem;padding:2rem 0;border-bottom:1px solid var(--border)}.section-item:last-child{border-bottom:none}
+.sec-num{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;color:var(--acc);opacity:.3;line-height:1;padding-top:.2rem}.sec-title{font-size:1.05rem;font-weight:600;margin-bottom:.4rem}.sec-desc{font-size:.85rem;color:var(--muted);line-height:1.75}
+.features{background:var(--bg2);padding:3rem 2rem;border-top:1px solid var(--border)}.features-inner{max-width:900px;margin:0 auto}.features h2{font-family:'Playfair Display',serif;font-size:1.5rem;margin-bottom:2rem}
+.features-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.75rem}.feat{padding:1.25rem;border:1px solid var(--border);background:var(--bg)}.feat-icon{font-size:1.3rem;margin-bottom:.5rem}.feat-title{font-size:.8rem;font-weight:600;margin-bottom:.2rem}.feat-desc{font-size:.75rem;color:var(--muted);line-height:1.5}
+.pricing{max-width:900px;margin:0 auto;padding:3rem 2rem}.pricing h2{font-family:'Playfair Display',serif;font-size:1.5rem;margin-bottom:.4rem}.pricing-sub{font-size:.85rem;color:var(--muted);margin-bottom:2rem}
+table{width:100%;border-collapse:collapse}th{font-size:.6rem;text-transform:uppercase;letter-spacing:.2em;color:var(--muted);text-align:left;padding:.75rem 1rem;border-bottom:1px solid var(--border)}td{padding:.9rem 1rem;border-bottom:1px solid var(--border);font-size:.85rem;vertical-align:top}tr.rec td{background:rgba(180,30,30,.08)}.plan-name{font-weight:700}.plan-price{font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--acc2);white-space:nowrap}.badge{display:inline-block;font-size:.55rem;text-transform:uppercase;letter-spacing:.12em;background:var(--acc);color:#fff;padding:.18rem .5rem;margin-left:.4rem;vertical-align:middle}.plan-desc{color:var(--muted)}
+.cta{padding:4rem 2rem 5rem;text-align:center}.cta-inner{max-width:600px;margin:0 auto}.cta h2{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,5vw,2.4rem);font-weight:900;margin-bottom:.75rem}.cta p{font-size:.9rem;color:var(--muted);margin-bottom:2.5rem;line-height:1.75}
+.cta-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}.btn-wa{display:inline-flex;align-items:center;gap:.6rem;background:#25D366;color:#fff;padding:.85rem 1.75rem;font-size:.8rem;font-weight:600;letter-spacing:.05em;transition:opacity .2s}.btn-wa:hover{opacity:.88}.btn-demo{display:inline-flex;align-items:center;gap:.6rem;border:1px solid var(--border);color:var(--text);padding:.85rem 1.75rem;font-size:.8rem;letter-spacing:.05em;transition:border-color .2s}.btn-demo:hover{border-color:var(--acc)}
 footer{border-top:1px solid var(--border);padding:1.5rem 2rem;text-align:center;font-size:.7rem;color:var(--muted);letter-spacing:.1em}
-
-@media(max-width:600px){
-  nav{padding:1rem 1.25rem}
-  .hero,.sections,.pricing,.cta{padding-left:1.25rem;padding-right:1.25rem}
-  .section-item{grid-template-columns:2.5rem 1fr;gap:1rem}
-  table td:last-child{display:none}
-}
+@media(max-width:600px){nav{padding:1rem 1.25rem}.hero,.sections,.pricing,.cta{padding-left:1.25rem;padding-right:1.25rem}.section-item{grid-template-columns:2.5rem 1fr;gap:1rem}table td:last-child{display:none}}
 </style>
 </head>
 <body>
-
-<nav>
-  <div class="logo">Web<span>Vanguard</span></div>
-  <div class="lang-toggle">
-    <button class="lang-btn active" onclick="setLang('en')" id="btn-en">EN</button>
-    <button class="lang-btn" onclick="setLang('ar')" id="btn-ar">AR</button>
-  </div>
-</nav>
-
+<nav><div class="logo">Web<span>Vanguard</span></div><div class="lang-toggle"><button class="lang-btn active" onclick="setLang('en')" id="btn-en">EN</button><button class="lang-btn" onclick="setLang('ar')" id="btn-ar">AR</button></div></nav>
 <div class="hero">
   <div class="hero-label"><span data-key="label">Exclusive Web Design Proposal · Dubai · March 2026</span></div>
   <h1 data-key="h1">Zafran<br>Barber</h1>
   <p class="hero-tagline" data-key="tagline">In Dubai's grooming market, the best barbers get found online. Now you will too.</p>
-  <div class="hero-pills">
-    <span class="pill filled" data-key="plan">Growth Plan</span>
-    <span class="pill">AED 4,500</span>
-  </div>
+  <div class="hero-pills"><span class="pill filled" data-key="plan">Growth Plan</span><span class="pill">AED 4,500</span></div>
   <a href="https://zafran-barber.vercel.app" target="_blank" class="demo-link" data-key="demo">View Live Website →</a>
 </div>
-
-<div class="opportunity">
-  <div class="opportunity-inner">
-    <h2 class="opp-title" data-key="opp-title">Men in Dubai choose their barber online. Be the one they find.</h2>
-    <p class="opp-text" data-key="opp-text">Men in Dubai choose their barber based on what they see online. Without a professional website, you're invisible to clients actively looking for a premium grooming experience in DIFC right now.</p>
-    <p class="opp-bold" data-key="opp-bold">We built your website. It's ready. All it needs is your name.</p>
-  </div>
-</div>
-
+<div class="opportunity"><div class="opportunity-inner">
+  <h2 class="opp-title" data-key="opp-title">Men choose their barber based on what they see online.</h2>
+  <p class="opp-text" data-key="opp-text">Without a professional website, you're invisible to clients actively looking for a premium grooming experience in DIFC right now. They find someone else — every single day.</p>
+  <p class="opp-bold" data-key="opp-bold">We built your website. It's ready. All it needs is your name.</p>
+</div></div>
 <div class="sections">
   <h2 data-key="built-title">What we built for you</h2>
-  <div class="section-item"><div class="sec-num">01</div><div><div class="sec-title" data-key="s1t">The Statement</div><p class="sec-desc" data-key="s1d">A bold, confident hero that communicates exactly who Zafran Barber is: precise, premium, worth every dirham.</p></div></div>
-  <div class="section-item"><div class="sec-num">02</div><div><div class="sec-title" data-key="s2t">Services & Pricing</div><p class="sec-desc" data-key="s2d">Every cut, beard treatment, and ritual with clear pricing in AED. No surprises, just results.</p></div></div>
-  <div class="section-item"><div class="sec-num">03</div><div><div class="sec-title" data-key="s3t">The Barber's Story</div><p class="sec-desc" data-key="s3d">The craft, the training, the philosophy. Clients don't just want a haircut — they want someone they trust.</p></div></div>
-  <div class="section-item"><div class="sec-num">04</div><div><div class="sec-title" data-key="s4t">The Work</div><p class="sec-desc" data-key="s4d">A gallery of cuts and styles that speaks louder than any description.</p></div></div>
-  <div class="section-item"><div class="sec-num">05</div><div><div class="sec-title" data-key="s5t">Book Your Chair</div><p class="sec-desc" data-key="s5d">A simple appointment form, WhatsApp for instant booking, and your DIFC location.</p></div></div>
+  <div class="section-item"><div class="sec-num">01</div><div><div class="sec-title" data-key="s1t">The Statement</div><p class="sec-desc" data-key="s1d">A bold, confident hero that communicates exactly who Zafran Barber is: precise, premium, and worth every dirham. First impressions win clients.</p></div></div>
+  <div class="section-item"><div class="sec-num">02</div><div><div class="sec-title" data-key="s2t">Services & Pricing</div><p class="sec-desc" data-key="s2d">Every cut, beard treatment, and ritual with clear pricing in AED. No surprises for the client — just a clear reason to book.</p></div></div>
+  <div class="section-item"><div class="sec-num">03</div><div><div class="sec-title" data-key="s3t">The Barber's Story</div><p class="sec-desc" data-key="s3d">The craft, the training, the philosophy. Clients don't just want a haircut — they want someone they trust with their appearance. This section builds that trust.</p></div></div>
+  <div class="section-item"><div class="sec-num">04</div><div><div class="sec-title" data-key="s4t">The Work</div><p class="sec-desc" data-key="s4d">A gallery of cuts and styles that speaks louder than any description. New clients will book based on what they see here.</p></div></div>
+  <div class="section-item"><div class="sec-num">05</div><div><div class="sec-title" data-key="s5t">Book Your Chair</div><p class="sec-desc" data-key="s5d">A simple appointment form, WhatsApp for instant booking, and your DIFC location so clients find you without effort.</p></div></div>
 </div>
-
-<div class="features">
-  <div class="features-inner">
-    <h2 data-key="inc-title">Everything included</h2>
-    <div class="features-grid">
-      <div class="feat"><div class="feat-icon">📱</div><div class="feat-title" data-key="f1t">Works on every device</div><p class="feat-desc" data-key="f1d">Phone, tablet, desktop — your website looks sharp everywhere.</p></div>
-      <div class="feat"><div class="feat-icon">🔍</div><div class="feat-title" data-key="f2t">Found on Google</div><p class="feat-desc" data-key="f2d">When someone searches "best barber DIFC Dubai", you appear first.</p></div>
-      <div class="feat"><div class="feat-icon">💬</div><div class="feat-title" data-key="f3t">WhatsApp booking</div><p class="feat-desc" data-key="f3d">Clients book in one tap — instant, frictionless, no app needed.</p></div>
-      <div class="feat"><div class="feat-icon">📧</div><div class="feat-title" data-key="f4t">Appointment form</div><p class="feat-desc" data-key="f4d">Booking requests go straight to your inbox. Never miss a new client.</p></div>
-      <div class="feat"><div class="feat-icon">📊</div><div class="feat-title" data-key="f5t">Visitor tracking</div><p class="feat-desc" data-key="f5d">See how many men are finding your barbershop online every day.</p></div>
-      <div class="feat"><div class="feat-icon">🤖</div><div class="feat-title" data-key="f6t">AI search ready</div><p class="feat-desc" data-key="f6d">Visible on ChatGPT, Google AI, and Perplexity — the new way people find services.</p></div>
-      <div class="feat"><div class="feat-icon">⚡</div><div class="feat-title" data-key="f7t">Loads in under 2 seconds</div><p class="feat-desc" data-key="f7d">Fast on any connection. Slow websites lose bookings before the page opens.</p></div>
-      <div class="feat"><div class="feat-icon">🌐</div><div class="feat-title" data-key="f8t">Multi-language ready</div><p class="feat-desc" data-key="f8d">Arabic and English as standard — for every client in DIFC and beyond.</p></div>
-    </div>
+<div class="features"><div class="features-inner">
+  <h2 data-key="inc-title">Everything included</h2>
+  <div class="features-grid">
+    <div class="feat"><div class="feat-icon">📱</div><div class="feat-title" data-key="f1t">Works on every device</div><p class="feat-desc" data-key="f1d">Phone, tablet, desktop — most clients will find you on mobile.</p></div>
+    <div class="feat"><div class="feat-icon">🔍</div><div class="feat-title" data-key="f2t">Found on Google</div><p class="feat-desc" data-key="f2d">When someone searches "premium barber DIFC Dubai", you appear.</p></div>
+    <div class="feat"><div class="feat-icon">💬</div><div class="feat-title" data-key="f3t">WhatsApp button</div><p class="feat-desc" data-key="f3d">One tap and clients are booking directly with you.</p></div>
+    <div class="feat"><div class="feat-icon">📧</div><div class="feat-title" data-key="f4t">Appointment form</div><p class="feat-desc" data-key="f4d">Booking requests go straight to your inbox.</p></div>
+    <div class="feat"><div class="feat-icon">📊</div><div class="feat-title" data-key="f5t">Visitor tracking</div><p class="feat-desc" data-key="f5d">See how many people find your barbershop online every day.</p></div>
+    <div class="feat"><div class="feat-icon">🤖</div><div class="feat-title" data-key="f6t">AI search ready</div><p class="feat-desc" data-key="f6d">Visible on ChatGPT, Google AI, and Perplexity.</p></div>
+    <div class="feat"><div class="feat-icon">⚡</div><div class="feat-title" data-key="f7t">Loads in under 2 seconds</div><p class="feat-desc" data-key="f7d">Fast on any connection — impatient clients don't wait.</p></div>
+    <div class="feat"><div class="feat-icon">🌐</div><div class="feat-title" data-key="f8t">Multi-language ready</div><p class="feat-desc" data-key="f8d">Arabic, Russian, French available on request.</p></div>
   </div>
-</div>
-
+</div></div>
 <div class="pricing">
   <h2 data-key="price-title">Your investment</h2>
   <p class="pricing-sub" data-key="price-sub">One-time payment. No monthly fees. No surprises.</p>
-  <table>
-    <thead><tr><th data-key="th-plan">Plan</th><th data-key="th-price">Price</th><th data-key="th-inc">What you get</th></tr></thead>
-    <tbody>
-      <tr><td><span class="plan-name">Starter</span></td><td><span class="plan-price">AED 1,500</span></td><td class="plan-desc" data-key="p1">Single-page website, WhatsApp button, Google-ready, mobile-friendly</td></tr>
-      <tr><td><span class="plan-name">Launch</span></td><td><span class="plan-price">AED 2,500</span></td><td class="plan-desc" data-key="p2">Full website, enquiry form, WhatsApp, Google-ready, visitor tracking</td></tr>
-      <tr class="rec"><td><span class="plan-name">Growth <span class="badge">Recommended</span></span></td><td><span class="plan-price">AED 4,500</span></td><td class="plan-desc" data-key="p3">Everything in Launch + 3 months of updates and support + AI search optimization</td></tr>
-      <tr><td><span class="plan-name">Premium</span></td><td><span class="plan-price">AED 8,000+</span></td><td class="plan-desc" data-key="p4">Everything in Growth + Google advertising setup + monthly performance reports</td></tr>
-    </tbody>
-  </table>
+  <table><thead><tr><th data-key="th-plan">Plan</th><th data-key="th-price">Price</th><th data-key="th-inc">What you get</th></tr></thead>
+  <tbody>
+    <tr><td><span class="plan-name">Starter</span></td><td><span class="plan-price">AED 1,500</span></td><td class="plan-desc" data-key="p1">Single-page website, WhatsApp button, Google-ready, mobile-friendly</td></tr>
+    <tr><td><span class="plan-name">Launch</span></td><td><span class="plan-price">AED 2,500</span></td><td class="plan-desc" data-key="p2">Full website, booking form, WhatsApp, Google-ready, visitor tracking</td></tr>
+    <tr class="rec"><td><span class="plan-name">Growth <span class="badge">Recommended</span></span></td><td><span class="plan-price">AED 4,500</span></td><td class="plan-desc" data-key="p3">Everything in Launch + 3 months of updates and support + AI search optimization</td></tr>
+    <tr><td><span class="plan-name">Premium</span></td><td><span class="plan-price">AED 8,000+</span></td><td class="plan-desc" data-key="p4">Everything in Growth + Google advertising setup + monthly performance reports</td></tr>
+  </tbody></table>
 </div>
-
-<div class="cta">
-  <div class="cta-inner">
-    <h2 data-key="cta-title">Ready to keep your chair full?</h2>
-    <p data-key="cta-sub">Your website is already built. Let's put your name on it and start filling your appointment book.</p>
-    <div class="cta-btns">
-      <a href="https://wa.me/971500000000?text=Hi%20Zafran%20Barber%2C%20I%20saw%20your%20web%20proposal" target="_blank" class="btn-wa">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        <span data-key="wa-btn">Chat on WhatsApp</span>
-      </a>
-      <a href="https://zafran-barber.vercel.app" target="_blank" class="btn-demo" data-key="demo-btn">View Live Website →</a>
-    </div>
+<div class="cta"><div class="cta-inner">
+  <h2 data-key="cta-title">Ready to fill your chair?</h2>
+  <p data-key="cta-sub">Your website is already built. Let's put your name on it and start bringing in new clients every day.</p>
+  <div class="cta-btns">
+    <a href="https://wa.me/971500000000?text=Hi%20Zafran%20Barber%2C%20I%20saw%20your%20web%20proposal%20and%20I%27m%20interested" target="_blank" class="btn-wa">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      <span data-key="wa-btn">Chat on WhatsApp</span>
+    </a>
+    <a href="https://zafran-barber.vercel.app" target="_blank" class="btn-demo" data-key="demo-btn">View Live Website →</a>
   </div>
-</div>
-
+</div></div>
 <footer>© 2026 Web Vanguard · Dubai · hello@webvanguard.ai</footer>
-
 <script>
-const t={
-  en:{label:"Exclusive Web Design Proposal · Dubai · March 2026",h1:"Zafran\nBarber",tagline:"In Dubai's grooming market, the best barbers get found online. Now you will too.",plan:"Growth Plan",demo:"View Live Website →","opp-title":"Men in Dubai choose their barber online. Be the one they find.","opp-text":"Men in Dubai choose their barber based on what they see online. Without a professional website, you're invisible to clients actively looking for a premium grooming experience in DIFC right now.","opp-bold":"We built your website. It's ready. All it needs is your name.","built-title":"What we built for you",s1t:"The Statement",s1d:"A bold, confident hero that communicates exactly who Zafran Barber is: precise, premium, worth every dirham.",s2t:"Services & Pricing",s2d:"Every cut, beard treatment, and ritual with clear pricing in AED. No surprises, just results.",s3t:"The Barber's Story",s3d:"The craft, the training, the philosophy. Clients don't just want a haircut — they want someone they trust.",s4t:"The Work",s4d:"A gallery of cuts and styles that speaks louder than any description.",s5t:"Book Your Chair",s5d:"A simple appointment form, WhatsApp for instant booking, and your DIFC location.","inc-title":"Everything included",f1t:"Works on every device",f1d:"Phone, tablet, desktop — your website looks sharp everywhere.",f2t:"Found on Google",f2d:"When someone searches \"best barber DIFC Dubai\", you appear first.",f3t:"WhatsApp booking",f3d:"Clients book in one tap — instant, frictionless, no app needed.",f4t:"Appointment form",f4d:"Booking requests go straight to your inbox. Never miss a new client.",f5t:"Visitor tracking",f5d:"See how many men are finding your barbershop online every day.",f6t:"AI search ready",f6d:"Visible on ChatGPT, Google AI, and Perplexity — the new way people find services.",f7t:"Loads in under 2 seconds",f7d:"Fast on any connection. Slow websites lose bookings before the page opens.",f8t:"Multi-language ready",f8d:"Arabic and English as standard — for every client in DIFC and beyond.","price-title":"Your investment","price-sub":"One-time payment. No monthly fees. No surprises.","th-plan":"Plan","th-price":"Price","th-inc":"What you get",p1:"Single-page website, WhatsApp button, Google-ready, mobile-friendly",p2:"Full website, enquiry form, WhatsApp, Google-ready, visitor tracking",p3:"Everything in Launch + 3 months of updates and support + AI search optimization",p4:"Everything in Growth + Google advertising setup + monthly performance reports","cta-title":"Ready to keep your chair full?","cta-sub":"Your website is already built. Let's put your name on it and start filling your appointment book.","wa-btn":"Chat on WhatsApp","demo-btn":"View Live Website →"},
-  ar:{label:"عرض تصميم ويب حصري · دبي · مارس 2026",h1:"زعفران\nبربر",tagline:"في سوق العناية بالمظهر في دبي، أفضل الحلاقين يُعثر عليهم عبر الإنترنت. الآن ستكون أنت منهم.",plan:"خطة النمو",demo:"عرض الموقع المباشر →","opp-title":"الرجال في دبي يختارون حلاقهم عبر الإنترنت. كن الخيار الذي يجدونه.","opp-text":"الرجال في دبي يختارون حلاقهم بناءً على ما يرونه عبر الإنترنت. بدون موقع إلكتروني احترافي، أنت غير مرئي للعملاء الذين يبحثون عن تجربة عناية راقية في DIFC الآن.",opp-bold:"لقد بنينا موقعك الإلكتروني. إنه جاهز. كل ما يحتاجه هو اسمك.","built-title":"ما بنيناه لك",s1t:"البيان",s1d:"بطل جريء وواثق يوصل بالضبط هوية زعفران بربر: دقيق، راقٍ، يستحق كل درهم.",s2t:"الخدمات والأسعار",s2d:"كل قصة وعلاج لحية وطقس مع أسعار واضحة بالدرهم. لا مفاجآت، فقط نتائج.",s3t:"قصة الحلاق",s3d:"الحرفة والتدريب والفلسفة. العملاء لا يريدون فقط قصة شعر — يريدون شخصاً يثقون به.",s4t:"الأعمال",s4d:"معرض قصات وأساليب يتكلم بصوت أعلى من أي وصف.",s5t:"احجز كرسيك",s5d:"نموذج موعد بسيط وواتساب للحجز الفوري وموقعك في DIFC.","inc-title":"كل شيء مشمول",f1t:"يعمل على كل جهاز",f1d:"هاتف، تابلت، كمبيوتر — موقعك يبدو أنيقاً في كل مكان.",f2t:"يظهر على جوجل",f2d:"عندما يبحث أحدهم عن \"أفضل حلاق DIFC دبي\"، تظهر أنت أولاً.",f3t:"حجز عبر واتساب",f3d:"يحجز العملاء بنقرة واحدة — فوري وسلس دون أي تطبيق.",f4t:"نموذج المواعيد",f4d:"طلبات الحجز تصل مباشرة إلى بريدك. لا تفوّت أي عميل جديد.",f5t:"تتبع الزوار",f5d:"اعرف كم رجلاً يجد محل الحلاقة الخاص بك على الإنترنت كل يوم.",f6t:"جاهز للبحث بالذكاء الاصطناعي",f6d:"مرئي على ChatGPT وGoogle AI وPerplexity.",f7t:"يُحمَّل في أقل من ثانيتين",f7d:"سريع على أي اتصال. المواقع البطيئة تفقد الحجوزات.",f8t:"جاهز لعدة لغات",f8d:"العربية والإنجليزية كمعيار — لكل عميل في DIFC وما بعده.","price-title":"استثمارك","price-sub":"دفعة واحدة. بدون رسوم شهرية. بدون مفاجآت.","th-plan":"الخطة","th-price":"السعر","th-inc":"ما تحصل عليه",p1:"موقع صفحة واحدة، زر واتساب، جاهز لجوجل، متجاوب مع الجوال",p2:"موقع كامل، نموذج اتصال، واتساب، جاهز لجوجل، تتبع الزوار",p3:"كل شيء في Launch + 3 أشهر دعم + تحسين البحث بالذكاء الاصطناعي",p4:"كل شيء في Growth + إعداد إعلانات جوجل + تقارير أداء شهرية","cta-title":"مستعد لإبقاء كرسيك ممتلئاً?","cta-sub":"موقعك الإلكتروني جاهز بالفعل. دعنا نضع اسمك عليه ونبدأ في ملء دفتر مواعيدك.","wa-btn":"تحدث على واتساب","demo-btn":"عرض الموقع المباشر →"}
-};
-function setLang(l){
-  document.querySelectorAll('[data-key]').forEach(el=>{
-    if(t[l]&&t[l][el.dataset.key]) el.textContent=t[l][el.dataset.key];
-  });
-  document.documentElement.lang=l==='ar'?'ar':'en';
-  document.documentElement.dir=l==='ar'?'rtl':'ltr';
-  document.getElementById('btn-en').classList.toggle('active',l==='en');
-  document.getElementById('btn-ar').classList.toggle('active',l==='ar');
-}
+const t={en:{"label":"Exclusive Web Design Proposal · Dubai · March 2026","h1":"Zafran\nBarber","tagline":"In Dubai's grooming market, the best barbers get found online. Now you will too.","plan":"Growth Plan","demo":"View Live Website →","opp-title":"Men choose their barber based on what they see online.","opp-text":"Without a professional website, you're invisible to clients actively looking for premium grooming in DIFC right now.","opp-bold":"We built your website. It's ready. All it needs is your name.","built-title":"What we built for you","s1t":"The Statement","s1d":"A bold, confident hero that communicates exactly who Zafran Barber is: precise, premium, worth every dirham.","s2t":"Services & Pricing","s2d":"Every cut and treatment with clear pricing in AED. No surprises — just a clear reason to book.","s3t":"The Barber's Story","s3d":"The craft, the training, the philosophy. Clients want someone they trust with their appearance.","s4t":"The Work","s4d":"A gallery of cuts and styles that speaks louder than any description.","s5t":"Book Your Chair","s5d":"A simple appointment form, WhatsApp for instant booking, and your DIFC location.","inc-title":"Everything included","f1t":"Works on every device","f1d":"Most clients will find you on mobile.","f2t":"Found on Google","f2d":"When someone searches \"premium barber DIFC Dubai\", you appear.","f3t":"WhatsApp button","f3d":"One tap and clients are booking directly with you.","f4t":"Appointment form","f4d":"Booking requests go straight to your inbox.","f5t":"Visitor tracking","f5d":"See how many people find your barbershop online.","f6t":"AI search ready","f6d":"Visible on ChatGPT, Google AI, Perplexity.","f7t":"Loads in under 2 seconds","f7d":"Impatient clients don't wait.","f8t":"Multi-language ready","f8d":"Arabic, Russian, French available on request.","price-title":"Your investment","price-sub":"One-time payment. No monthly fees.","th-plan":"Plan","th-price":"Price","th-inc":"What you get","p1":"Single-page website, WhatsApp, Google-ready, mobile","p2":"Full website, booking form, WhatsApp, tracking","p3":"Everything in Launch + 3 months support + AI search","p4":"Everything in Growth + Google Ads + monthly reports","cta-title":"Ready to fill your chair?","cta-sub":"Your website is already built. Let's put your name on it.","wa-btn":"Chat on WhatsApp","demo-btn":"View Live Website →"},ar:{"label":"عرض تصميم ويب حصري · دبي · مارس 2026","h1":"زعفران\nباربر","tagline":"في سوق الحلاقة في دبي، أفضل الحلاقين يُعثر عليهم عبر الإنترنت. الآن أنت أيضاً.","plan":"خطة النمو","demo":"عرض الموقع المباشر →","opp-title":"الرجال يختارون حلاقهم بناءً على ما يرونه عبر الإنترنت.","opp-text":"بدون موقع إلكتروني احترافي، أنت غير مرئي للعملاء الباحثين عن تجربة حلاقة فاخرة في DIFC الآن.","opp-bold":"لقد بنينا موقعك. إنه جاهز. كل ما يحتاجه هو اسمك.","built-title":"ما بنيناه لك","s1t":"البيان","s1d":"بداية جريئة وواثقة تعبّر عن هوية Zafran Barber: دقة وفخامة بكل درهم.","s2t":"الخدمات والأسعار","s2d":"كل قصة وعلاج بأسعار واضحة بالدرهم. بدون مفاجآت.","s3t":"قصة الحلاق","s3d":"الحرفة والتدريب والفلسفة. العملاء يريدون شخصاً يثقون به.","s4t":"الأعمال","s4d":"معرض قصات وأساليب يتحدث بصوت أعلى من أي وصف.","s5t":"احجز كرسيك","s5d":"نموذج موعد وواتساب وموقعك في DIFC.","inc-title":"كل شيء مشمول","f1t":"يعمل على كل جهاز","f1d":"معظم العملاء سيجدونك على الهاتف.","f2t":"يظهر على جوجل","f2d":"عندما يبحث أحدهم عن حلاق فاخر في DIFC.","f3t":"زر واتساب","f3d":"نقرة واحدة والعميل يحجز مباشرة.","f4t":"نموذج الحجز","f4d":"طلبات الحجز تصل مباشرة لبريدك.","f5t":"تتبع الزوار","f5d":"اعرف كم شخصاً يجد محلك يومياً.","f6t":"جاهز للذكاء الاصطناعي","f6d":"مرئي على ChatGPT وGoogle AI.","f7t":"يُحمَّل في أقل من ثانيتين","f7d":"العملاء المتعجلون لا ينتظرون.","f8t":"جاهز لعدة لغات","f8d":"العربية والروسية والفرنسية متاحة.","price-title":"استثمارك","price-sub":"دفعة واحدة. بدون رسوم شهرية.","th-plan":"الخطة","th-price":"السعر","th-inc":"ما تحصل عليه","p1":"موقع صفحة واحدة، واتساب، جوجل، جوال","p2":"موقع كامل، نموذج حجز، واتساب، تتبع","p3":"كل شيء في Launch + 3 أشهر دعم + ذكاء اصطناعي","p4":"كل شيء في Growth + إعلانات جوجل + تقارير","cta-title":"مستعد لملء كرسيك؟","cta-sub":"موقعك جاهز. دعنا نضع اسمك عليه.","wa-btn":"تحدث على واتساب","demo-btn":"عرض الموقع المباشر →"}};
+function setLang(l){document.querySelectorAll('[data-key]').forEach(el=>{if(t[l]&&t[l][el.dataset.key])el.textContent=t[l][el.dataset.key]});document.documentElement.lang=l==='ar'?'ar':'en';document.documentElement.dir=l==='ar'?'rtl':'ltr';document.getElementById('btn-en').classList.toggle('active',l==='en');document.getElementById('btn-ar').classList.toggle('active',l==='ar')}
 </script>
-</body>
-</html>
+</body></html>
